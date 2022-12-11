@@ -3,12 +3,12 @@ import classes from './Header.module.css'
 import BgImage from '../../Asset/meals.jpg'
 import HeaderCartButton from './HeaderCartButton'
 
-function Header() {
+function Header(props) {
   return (
     <Fragment>
         <header className={classes.header}>
         <h1>ReactMeals</h1>
-        <HeaderCartButton />
+        <HeaderCartButton onOpen={props.onCartshown}/>
         </header>
         <div className={classes['main-image']}>
         <img src={BgImage} alt="banner bg"/>
