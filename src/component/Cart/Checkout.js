@@ -2,8 +2,8 @@ import React, {useRef, useState} from 'react'
 import classes from './Checkout.module.css'
 
 
-const formValid = (value) => value.trim().length !== 0
-const postalValid = (value) => value.trim().length === 5
+const formValid = (value) => value.trim() !== ''
+const postalValid = (value) => value.trim().length === 6
 
 
 function Checkout(props) {
@@ -24,24 +24,32 @@ function Checkout(props) {
         const enteredStreet = streetInputRef.current.value
         const enteredPostal = postalInputRef.current.value
         const enteredCity = cityInputRef.current.value
-
-        setFormIsCorrect({
-            name: enteredName,
-            street: enteredStreet,
-            postal: enteredPostal,
-            city: enteredCity
-        })
         
         const nameValid = formValid(enteredName)
         const streetValid = formValid(enteredStreet)
         const validPostal = postalValid(enteredPostal)
         const cityValid = formValid(enteredCity)
 
+        setFormIsCorrect({
+            name: nameValid,
+            street: streetValid,
+            postal: validPostal,
+            city: cityValid
+        })
+
         const validForm = nameValid && streetValid && validPostal && cityValid
 
         if(!validForm) {
             return
         }
+
+        props.onConfirm({
+            name: enteredName,
+            street: enteredStreet,
+            postal : enteredPostal,
+            city: enteredCity
+
+        })
     }
 
     const nameClass = `${classes.control} ${!formIsCorrect.name ? classes.invalid : ""}`
@@ -67,7 +75,7 @@ function Checkout(props) {
         <div className={postalClass}>
             <label htmlFor='postal'>Postal code</label>
             <input type="text" id="postal" ref={postalInputRef}/>
-            {!formIsCorrect.postal && <p>postal address should be 5 digit</p>}
+            {!formIsCorrect.postal && <p>postal address should be 6 digit</p>}
         </div>
 
         <div className={cityClass}>
