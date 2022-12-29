@@ -83,6 +83,7 @@ function Cart(props) {
     })
     setIsLoading(false)
     setSubmitted(true)
+    cartCtx.clearCart()
   }
 
   function orderCheckout(){
