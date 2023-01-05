@@ -7,7 +7,7 @@ function Header(props) {
   return (
     <Fragment>
         <header className={classes.header}>
-        <h1>NijaMeals</h1>
+        <h1>NaijaMeals</h1>
         <HeaderCartButton onOpen={props.onCartshown}/>
         </header>
         <div className={classes['main-image']}>
