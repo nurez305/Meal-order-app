@@ -30,6 +30,7 @@ const AvailableMeals = () => {
         })
       }
       setMeals(loadedMeal)
+      //console.log(loadedMeal)
       setLoading(false)
     }
     fetchMeals().catch((error)=>{
