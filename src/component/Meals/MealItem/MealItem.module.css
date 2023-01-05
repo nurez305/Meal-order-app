@@ -12,6 +12,7 @@
 
 .description {
   font-style: italic;
+  
 }
 
 .price {
@@ -19,4 +20,15 @@
   font-weight: bold;
   color: #ad5502;
   font-size: 1.25rem;
+}
+
+@media screen and (max-width : 600px){
+  .meal h3 {
+    font-size: 15px;
+  }
+
+  .description {
+    font-size: 14px;
+    width: 80%;
+  }
 }
