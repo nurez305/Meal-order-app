@@ -20,6 +20,7 @@ function MealItem(props) {
     <li className={classes.meal}>
         <div>
         <h3>{props.name}</h3>
+        <img className={classes.foodimg} src={props.img} alt="pics"/>
         <div className={classes.description}>{props.description}</div>
         <div className={classes.price}>{price}</div>
         </div>
