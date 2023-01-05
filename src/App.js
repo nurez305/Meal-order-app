@@ -1,5 +1,6 @@
 import { useState} from 'react'
 import Cart from './component/Cart/Cart';
+import Footer from './component/Footer/Footer';
 import Header from './component/Layout/Header';
 import Meals from './component/Meals/Meals'
 import CartProvider from './store/CartProvider';
@@ -22,6 +23,9 @@ setCartIsShown(false)
       <main>
         <Meals />
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </CartProvider>
   );
 }
