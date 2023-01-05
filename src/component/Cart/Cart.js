@@ -68,12 +68,18 @@ function Cart(props) {
         <div className={classes.success}>
         <img className={classes.imgsuccess} src={loadingGIF} alt="success"/>
         <p>Order is successfully submitted!!</p>
-        </div>
+
         <div className={classes.actions}>
         <button className={classes.button} onClick={props.onCarthide}>
       Close
     </button>
     </div>
+        </div>
+        {/* <div className={classes.actions}>
+        <button className={classes.button} onClick={props.onCarthide}>
+      Close
+    </button>
+    </div> */}
         </>
   )
 
