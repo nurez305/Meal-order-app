@@ -36,7 +36,7 @@ function HeaderCartButton(props) {
         <span className={classes.icon}>
             <CartIcon/>
         </span>
-        <span>Your Cart</span>
+        <span className={classes.remove}>Your Cart</span>
         <span className={classes.badge}>{numberOfCartitems}</span>
     </button>
   )
