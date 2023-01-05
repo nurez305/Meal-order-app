@@ -4,6 +4,8 @@ import Modal from "../UI/Modal/Modal";
 import classes from "./Cart.module.css";
 import CartItem from "./CartItem";
 import Checkout from "./Checkout";
+import loadingGIF from "../../Asset/success_animation.gif"
+
 
 function Cart(props) {
   const cartCtx = useContext(CartContext);
@@ -63,7 +65,10 @@ function Cart(props) {
 
   const submittedOrder = (
         <>
+        <div className={classes.success}>
+        <img className={classes.imgsuccess} src={loadingGIF} alt="success"/>
         <p>Order is successfully submitted!!</p>
+        </div>
         <div className={classes.actions}>
         <button className={classes.button} onClick={props.onCarthide}>
       Close
