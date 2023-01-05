@@ -19,7 +19,7 @@
 
 .description {
   font-style: italic;
-  width: 85%;
+  width: 75%;
   
 }
 
@@ -37,7 +37,7 @@
 
   .description {
     font-size: 14px;
-    width: 80%;
+    width: 100%;
   }
 
   .meal .foodimg {
