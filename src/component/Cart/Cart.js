@@ -14,7 +14,7 @@ function Cart(props) {
   const [submitted, setSubmitted] = useState(false)
   
 
-  const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
+  const totalAmount = `₦${cartCtx.totalAmount.toFixed(2)}`;
   const hasItem = cartCtx.items.length > 0;
 
   function cartItemRemove(id) {
