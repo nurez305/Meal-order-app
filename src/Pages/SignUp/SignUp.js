@@ -54,6 +54,17 @@ return (
       <h2>Naija Meals</h2>
       </div>
       <div className={classes.container}>
+
+      <div className={classes['form_input']}>
+        <label htmlFor='email'>Name</label>
+        <input
+          type='text'
+          autoComplete='off'
+          placeholder='Enter your name'
+          required
+        />
+      </div>
+
       <div className={classes['form_input']}>
         <label htmlFor='email'>Email</label>
         <input
@@ -83,9 +94,9 @@ return (
         Login
       </button>
       <p className={classes['login_text']}>
-        Dont have an account?{' '}
-        <Link to='/register' className={classes['login_anchor']}>
-          Create Account
+        Already have an account?{' '}
+        <Link to='/login' className={classes['login_anchor']}>
+          Please Login
         </Link>
       </p>
     </form>

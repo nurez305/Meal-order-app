@@ -1,3 +1,5 @@
+import {ToastContainer} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 import React from 'react'
 import Dashboard from './Pages/Dashboard/Dashboard'
 import Login from './Pages/Login/Login'
@@ -8,7 +10,9 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 function App() {
   return (
+    <><ToastContainer />
     <BrowserRouter>
+    
     <Routes>
       <Route path='/' element={<Login/>}/>
       <Route path='/login' element={<Login />} />
@@ -16,6 +20,7 @@ function App() {
       <Route path='/store' element={<RequireAuth><Dashboard /></RequireAuth>}/>
     </Routes>
     </BrowserRouter>
+    </>
   )
 }
 
