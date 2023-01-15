@@ -1,55 +1,61 @@
+import {toast} from 'react-toastify'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import axios from '../../Api/axios'
 import { useNavigate } from 'react-router-dom'
-import Swal from 'sweetalert2'
 import classes from '../Login/Login.module.css'
 
 const SignUp = () => {
-//   const [name, setName] = useState('')
-//   const [email, setEmail] = useState('')
-//   const [password, setPassword] = useState('')
-//   const [error, setError] = useState('')
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [loading, setLoading] = useState(false)
 
-//   const handleName = (event) => {
-//     setName(event.target.value)
-//     setError('')
-//   }
+  const handleName = (event) => {
+    setName(event.target.value)
+  }
 
-//   const handleEmail = (event) => {
-//     setEmail(event.target.value)
-//     setError('')
-//   }
-//   const handlePassword = (event) => {
-//     setPassword(event.target.value)
-//     setError('')
-//   }
-//   const navigate = useNavigate()
+  const handleEmail = (event) => {
+    setEmail(event.target.value)
+  }
+  const handlePassword = (event) => {
+    setPassword(event.target.value)
+  }
+  const navigate = useNavigate()
 
-//   const handleSubmit = async (e) => {
-//     e.preventDefault()
-//     try {
-//       const response = await axios.post('/register', {
-//         name,
-//         email,
-//         password,
-//       })
-//       localStorage.setItem('token', response.data.token)
-//       navigate('/login')
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    if(name.trim().length === 0 || !email || password.trim().length === 0){
+      return toast('All field must be properly filled')
+    }
+    setLoading(true)
+    try {
+      const response = await axios.post('/register', {
+        name,
+        email,
+        password,
+      })
+      localStorage.setItem('token', response.data.token)
+      toast('User successfully created, Please login')
+      navigate('/login')
+      setLoading(false)
     
-//     } catch (error) {
-//       console.log('ERROR', error)
-     
-//       Swal.fire({
-//         icon: 'error',
-//         title: 'Oops...',
-//         text: error.response.data.error,
-//       })
-//     }
-//   }
+    } catch (error) {
+      toast(<div>{error.response.data.message}</div>)
+      setLoading(false)
+    }
+  }
 
 return (
-    <form className={classes["form_container"]}>
+  
+  <>
+  {loading && (
+    <div className={classes.loadingmodal}>
+      <div className={classes.loading}></div>
+      </div>
+      )}
+
+    <form onSubmit={handleSubmit} className={classes["form_container"]}>
       <div className={classes["form_head"]}>  
       <h2>Naija Meals</h2>
       </div>
@@ -61,7 +67,8 @@ return (
           type='text'
           autoComplete='off'
           placeholder='Enter your name'
-          required
+          onChange={handleName}
+          value={name}
         />
       </div>
 
@@ -71,7 +78,8 @@ return (
           type='email'
           autoComplete='off'
           placeholder='Enter your email'
-          required
+          onChange={handleEmail}
+          value={email}
         />
       </div>
 
@@ -81,7 +89,8 @@ return (
           type='password'
           autoComplete='off'
           placeholder='Enter your password'
-          required
+          onChange={handlePassword}
+          value={password}
         />
       </div>
 
@@ -100,6 +109,8 @@ return (
         </Link>
       </p>
     </form>
+
+    </>
     )
 }
 export default SignUp

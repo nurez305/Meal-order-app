@@ -1,4 +1,4 @@
-import {Fragment, useState} from 'react'
+import {Fragment} from 'react'
 import { useNavigate } from 'react-router-dom'
 import classes from './Header.module.css'
 import BgImage from '../../Asset/meals.jpg'
@@ -8,7 +8,6 @@ import HeaderCartButton from './HeaderCartButton'
 
 
 function Header(props) {
-  const [logout, setLogOut] = useState('')
   const navigate = useNavigate()
 
 function handleLogout(){

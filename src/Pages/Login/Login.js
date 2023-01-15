@@ -13,20 +13,23 @@ const Login = () => {
   const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
-    setLoading(true)
     e.preventDefault()
-    try {
+    if(!email || password.trim().length === 0 ){
+      return toast("email and password must not be empty")
+    }
+    setLoading(true)
+    try { 
       const response = await axios.post('/login', {
         email,
         password,
       })
-      console.log(response)
+      // console.log(response)
       localStorage.setItem('token', response.data.token)
-      toast("welcome")
+      toast(<div>{`Welcome ${response.data.name}`}</div>)
       navigate("/store")
       setLoading(false)
     } catch (error) {
-      toast('error')
+      toast(<div>{error.response.data.message}</div>)
         setLoading(false)
     }
   }
@@ -62,7 +65,7 @@ const Login = () => {
     placeholder='Enter your email'
     onChange={handleEmail}
     value={email}
-    required
+    // required
   />
 </div>
 
@@ -74,7 +77,7 @@ const Login = () => {
     placeholder='Enter your password'
     onChange={handlePassword}
     value={password}
-    required
+    // required
   />
 </div>
 
