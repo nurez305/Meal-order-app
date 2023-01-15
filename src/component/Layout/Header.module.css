@@ -31,13 +31,13 @@
 .logout{
   font: inherit;
   font-weight: bold;
-  color: #8a2b06;
+  color: whitesmoke;
   border: 1px solid #8a2b06;
-  width: 4.5rem;
-  height: 40px;
+  width: 5.5rem;
+  height: 52px;
   text-align: center;
-  border-radius: 6px;
-  background-color: white;
+  border-radius: 15%;
+  background-color:  #4d1601;
   cursor: pointer;
   
 }
@@ -46,4 +46,19 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+
+
+@media only screen and (max-width: 600px){
+  .header h1{
+    font-size: 20px;
+  }
+
+  .logout {
+    width: 4rem;
+    font-size: 14px;
+    font-weight: 600;
+    height: 45px;
+  }
 }
