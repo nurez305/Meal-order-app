@@ -100,7 +100,7 @@ return (
         type='submit'
         className={classes['login_btn']}
       >
-        Login
+        Sign Up
       </button>
       <p className={classes['login_text']}>
         Already have an account?{' '}

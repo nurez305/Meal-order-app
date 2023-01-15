@@ -90,7 +90,7 @@ const Login = () => {
   type='submit'
   className={classes['login_btn']}
 >
-  Login
+  Sign In
 </button>
 <p className={classes['login_text']}>
   Dont have an account?{' '}
