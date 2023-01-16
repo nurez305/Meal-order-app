@@ -51,8 +51,21 @@ return (
   <>
   {loading && (
     <div className={classes.loadingmodal}>
-      <div className={classes.loading}></div>
-      </div>
+    <div className={classes["lds-spinner"]}>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    </div>
       )}
 
     <form onSubmit={handleSubmit} className={classes["form_container"]}>
