@@ -14,7 +14,7 @@ function Header(props) {
 function handleLogout(){
   localStorage.clear()
   navigate('/')
-  toast('Successfully logou')
+  toast('Successfully logout')
 }
 
   return (
