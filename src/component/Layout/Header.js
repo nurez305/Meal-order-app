@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import classes from './Header.module.css'
 import BgImage from '../../Asset/meals.jpg'
 import HeaderCartButton from './HeaderCartButton'
+import {toast} from 'react-toastify'
 // import axios from '../../Api/axios'
 
 
@@ -13,6 +14,7 @@ function Header(props) {
 function handleLogout(){
   localStorage.clear()
   navigate('/')
+  toast('Successfully logou')
 }
 
   return (
