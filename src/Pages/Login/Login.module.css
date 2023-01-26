@@ -8,6 +8,7 @@
     margin: 5rem auto;
     background-color: rgb(59, 50, 50);
     box-shadow: 0 0 10px rgb(59, 50, 50);
+    border-radius: 15px;
 }
 
 .form_head h2{
@@ -86,6 +87,42 @@
   background-color: rgba(0, 0, 0, 0.75);
   }
 
+  .loader {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;  
+  
+    width: 60px;   
+    height: 60px;
+  
+    margin-top:-30px; 
+    margin-left:-30px;
+  
+    border-radius: 50%; 
+  
+    border-top: 5px solid #3498db;
+    animation-name: spin;
+  
+    animation-duration: 2000ms;
+  
+    animation-iteration-count: infinite; 
+  
+    animation-timing-function: linear;   
+  
+    transform: rotate(0deg);
+  }     
+      @keyframes spin {      
+          0% { transform: rotate(0deg); }      
+          100% { transform: rotate(360deg); } 
+          }
+
+/* SPINER CSS */
+
 /* .loading{
     width: 120px;
     height: 120px;
@@ -107,8 +144,9 @@
  */
 
 
+/* NEW SPINER CSS */
 
-.lds-spinner {
+/* .lds-spinner {
   color: official;
   display: flex;
   position: relative;
@@ -186,7 +224,7 @@
   100% {
     opacity: 0;
   }
-}
+} */
 
 
 

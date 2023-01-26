@@ -51,7 +51,7 @@ return (
   <>
   {loading && (
     <div className={classes.loadingmodal}>
-    <div className={classes["lds-spinner"]}>
+    {/* <div className={classes["lds-spinner"]}>
       <div></div>
       <div></div>
       <div></div>
@@ -64,7 +64,12 @@ return (
       <div></div>
       <div></div>
       <div></div>
-    </div>
+    </div> */}
+
+        <div className={classes.loader}>
+          <div className={classes.spinner}></div>
+          </div>
+
     </div>
       )}
 

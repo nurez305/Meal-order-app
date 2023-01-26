@@ -11,7 +11,8 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 function App() {
   return (
     <>
-    <ToastContainer toastStyle={{backgroundColor :"rgb(59, 50, 50)", color:"white"}} />
+    {/* <ToastContainer toastStyle={{backgroundColor :"rgb(59, 50, 50)", color:"white"}} /> */}
+    <ToastContainer />
     <BrowserRouter>
     
     <Routes>
