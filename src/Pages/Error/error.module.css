@@ -1,0 +1,22 @@
+.error_cont {
+    height: 100vh;
+    justify-content: center;
+    background: url(../../Asset/404_.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    align-items: center;
+    text-align: center;
+ }
+
+
+ .error_text {
+    font-size: 25px;
+    color: white;
+    text-align: center;
+ }
+
+ .btn {
+   color: white;
+   color: rgb(226, 186, 43);
+}

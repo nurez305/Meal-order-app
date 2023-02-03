@@ -4,6 +4,7 @@ import React from 'react'
 import Dashboard from './Pages/Dashboard/Dashboard'
 import Login from './Pages/Login/Login'
 import SignUp from './Pages/SignUp/SignUp'
+import Error from './Pages/Error/Error'
 import RequireAuth from './Api/RequireAuth';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
@@ -16,6 +17,7 @@ function App() {
     <BrowserRouter>
     
     <Routes>
+    <Route path="*" element={<Error />} />
       <Route path='/' element={<Login/>}/>
       <Route path='/login' element={<Login />} />
       <Route path='/register' element={<SignUp />}/>
